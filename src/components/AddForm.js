@@ -1,6 +1,6 @@
   import React from 'react';
   import { connect } from 'react-redux';
-  import { addToDos } from '../actions/toDos';
+  import { addToDo } from '../actions/toDos';
 
   import './AddForm.css';
 
@@ -21,7 +21,7 @@
       e.preventDefault();
       
       if (input.value) {
-        this.props.addToDos(input.value);
+        this.props.addToDo(input.value);
         input.value = '';
       } else {
         this.setState({ isValid: false });        
@@ -57,4 +57,4 @@
     }
   }
 
-  export default connect(mapStateToProps, {addToDos})(AddForm);
+  export default connect(mapStateToProps, {addToDo})(AddForm);

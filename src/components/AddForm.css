@@ -2,3 +2,9 @@
   margin: 20px 0;
   position: relative;
 }
+
+.add-form__btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+}

@@ -9,19 +9,14 @@ export default function reducer(
         return [
           ...state,
           {
-            id: state.length + 1,
+            id: state.length,
             text: action.payload
           }
         ]
       }
       case "REMOVE_TODO": {
-        return [
-          ...state,
-          {
-            id: action.payload.id,
-            text: action.payload.text
-          }
-        ]
+        const todos = state.filter(todo => todo.id !== action.payload);
+        return todos;
       }
     }
 
