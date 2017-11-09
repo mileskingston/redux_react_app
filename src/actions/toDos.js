@@ -1,18 +1,24 @@
-import todos from '../data/todos';
+// import todos from '../data/todos';
 
-export function fetchToDos() {
+// function fetchToDos() {
+//   return {
+//     type: "FETCH_TODOS",
+//     payload: { todos }
+//   }
+// }
+
+export function addToDos(text) {
   return {
-    type: "FETCH_TODOS",
-    payload: todos
+    type: "ADD_TODO",
+    payload: text
   }
 }
 
-export function addToDo(id, text) {
+export function removeToDos(id, text) {
   return {
-    type: "ADD_TODO",
+    type: "REMOVE_TODO",
     payload: {
-      id,
-      text
+      id
     }
   }
 }

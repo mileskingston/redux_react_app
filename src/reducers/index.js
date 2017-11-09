@@ -1,21 +1,27 @@
 import { createStore } from "redux";
+import todos from '../data/todos';
 
 export default function reducer(
-  state = [], action) {
+  state = todos, action) {
 
     switch (action.type) {
-      case "FETCH_TODOS": {
-        return {
-          ...state,
-          state: action.payload
-        }
-      }
       case "ADD_TODO": {
-        return {
+        return [
           ...state,
-          id: action.payload.id,
-          text: action.payload.text       
-        }
+          {
+            id: state.length + 1,
+            text: action.payload
+          }
+        ]
+      }
+      case "REMOVE_TODO": {
+        return [
+          ...state,
+          {
+            id: action.payload.id,
+            text: action.payload.text
+          }
+        ]
       }
     }
 
