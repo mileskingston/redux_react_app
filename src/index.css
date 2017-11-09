@@ -1,8 +1,8 @@
 body {
-  margin: 0;
-  padding: 0;
   font-family: sans-serif;
   font-size: 14px;
+  margin: 0;
+  padding: 0;
 }
 
 input, button {
@@ -33,6 +33,13 @@ button {
   right: 0;
   top: 0;
 }
-.btn:hover {
+.btn:hover, .btn:focus {
   background-color: #005441;
+}
+
+.error {
+  background-color: rgba(187,29,24,0.7);
+  color: #fff;
+  margin: 0;
+  padding: 10px;
 }
